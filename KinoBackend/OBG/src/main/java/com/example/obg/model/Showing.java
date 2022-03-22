@@ -1,10 +1,13 @@
 package com.example.obg.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Time;
 
 @Entity
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Showing {
     @Id
     @Column(name="showingID")
@@ -20,6 +23,9 @@ public class Showing {
     @ManyToOne
     @JoinColumn(name = "movieID")
     private Movie movie;
+
+    @OneToMany
+    @JoinColumn(name = "showingID")
 
     public int getShowingID() {
         return showingID;
