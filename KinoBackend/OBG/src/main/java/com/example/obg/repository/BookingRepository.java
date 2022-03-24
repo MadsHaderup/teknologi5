@@ -8,4 +8,6 @@ public interface BookingRepository extends JpaRepository<Booking, Integer> {
 
     @Query("SELECT COUNT(b) FROM Booking b WHERE b.showing.showingID = :showingID")
     long countBookingByNoOfPeople(int showingID);
+
+    //@Query("SELECT SUM(b) ")
 }
