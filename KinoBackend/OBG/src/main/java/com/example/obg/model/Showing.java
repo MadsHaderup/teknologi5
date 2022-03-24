@@ -24,9 +24,6 @@ public class Showing {
     @JoinColumn(name = "movieID")
     private Movie movie;
 
-    @OneToMany
-    @JoinColumn(name = "showingID")
-
     public int getShowingID() {
         return showingID;
     }

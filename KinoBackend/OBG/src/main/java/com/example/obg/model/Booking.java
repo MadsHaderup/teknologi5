@@ -10,12 +10,34 @@ public class Booking {
     @Column(name="bookingID")
     private int bookingID;
 
+    @Column(name="bookingname")
+    private String bookingname;
+
+    @Column(name="phonenumber")
+    private String phonenumber;
+
     @Column(name="no_of_people")
     private int noOfPeople;
 
     @ManyToOne
     @JoinColumn(name = "showingID")
     private Showing showing;
+
+    public String getBookingname() {
+        return bookingname;
+    }
+
+    public void setBookingname(String bookingname) {
+        this.bookingname = bookingname;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
 
     public int getBookingID() {
         return bookingID;
@@ -45,6 +67,8 @@ public class Booking {
     public String toString() {
         return "Booking{" +
                 "bookingID=" + bookingID +
+                ", bookingname='" + bookingname + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
                 ", noOfPeople=" + noOfPeople +
                 ", showing=" + showing +
                 '}';
