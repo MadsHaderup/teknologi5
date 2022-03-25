@@ -20,9 +20,9 @@ public class BookingController {
     @PostMapping("/booking")
     @ResponseStatus(HttpStatus.CREATED)
     public Booking postShowing(@RequestBody Booking booking) {
-        long totalbookings = bookingRepository.countBookingByNoOfPeople(booking.getShowing().getShowingID());
+        //long totalbookings = bookingRepository.sumOfBookings(booking.getShowing().getShowingID());
         System.out.println("booking is = " + booking.getBookingID());
-        System.out.println(totalbookings);
+        //System.out.println(totalbookings);
         return bookingRepository.save(booking);
 
     }
