@@ -19,7 +19,7 @@ public class BookingController {
     //@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/booking")
     @ResponseStatus(HttpStatus.CREATED)
-    public Booking postShowing(@RequestBody Booking booking) {
+    public Booking postBooking(@RequestBody Booking booking) {
         //long totalbookings = bookingRepository.sumOfBookings(booking.getShowing().getShowingID());
         System.out.println("booking is = " + booking.getBookingID());
         //System.out.println(totalbookings);
