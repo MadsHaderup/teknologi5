@@ -1,6 +1,7 @@
 package com.example.obg.controller;
 
 import com.example.obg.model.Booking;
+import com.example.obg.model.Movie;
 import com.example.obg.model.Showing;
 import com.example.obg.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,7 @@ public class BookingController {
     //@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @PostMapping("/booking")
     @ResponseStatus(HttpStatus.CREATED)
-    public Booking postBooking(@RequestBody Booking booking) {
-        //long totalbookings = bookingRepository.sumOfBookings(booking.getShowing().getShowingID());
-        System.out.println("booking is = " + booking.getBookingID());
-        //System.out.println(totalbookings);
+    public Booking postShowing(@RequestBody Booking booking) {
         return bookingRepository.save(booking);
 
     }
